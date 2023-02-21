@@ -79,8 +79,18 @@ WSGI_APPLICATION = 'pic_design.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # TODO: BUILD DB
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+
+        # #PRODUCTION DB
+          'ENGINE': 'django.db.backends.postgresql',
+          'NAME': 'db295vph055lbb',
+          'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
+          'PORT': 5432,
+          'USER': 'syfqpwcdekixpw',
+          'PASSWORD': '619ef62ac30e44449456d3e2ebdc00e5d097f60f82b33c3fa9009ce554aef775'
+
     }
 }
 
