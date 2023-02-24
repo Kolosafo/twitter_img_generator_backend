@@ -1,7 +1,7 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 from . views import updateViewCount
 
-one_hour = 300
+thirty_mins = 1800
 
 # WE Want to update user nutrition values after 30 days
 
@@ -9,5 +9,5 @@ one_hour = 300
 def start():
     scheduler = BackgroundScheduler()
     scheduler.add_job(updateViewCount, 'interval',
-                      seconds=one_hour)
+                      seconds=thirty_mins)
     scheduler.start()
