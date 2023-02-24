@@ -331,7 +331,7 @@ def post_3_design(img: str, name: str, inspirational_qoute: str, party: str):
     except:
         pass
     # base.paste(resize_user_pic, (-120, 600), resize_user_pic)
-    draw_layer = ImageDraw.Draw(name_card)
+    
 
     if(len(name) > 11):
         newWidth = 430 - ((len(name) - 11) * 6.4)
@@ -341,6 +341,7 @@ def post_3_design(img: str, name: str, inspirational_qoute: str, party: str):
     else:
         newWidth = 420
     # draw_layer.text((newWidth, 704), name, "white", font=font)
+    draw_layer = ImageDraw.Draw(name_card)
     draw_layer.text((newWidth, 50), name, "white", font=_font)
     _base.paste(name_card, (70, 2900), name_card)
 

@@ -52,6 +52,7 @@ def design_profile(request):
     profile_img = data["profile_img"]
     party = data["party"]
     name = data["name"]
+    print("I DEY CHECK NAME", name)
 
     if(party == "APC"):
         wm_apc_img, og = apc_design(profile_img)
