@@ -353,7 +353,7 @@ def post_3_design(img: str, name: str, inspirational_qoute: str, party: str):
 
     draw_layer3 = ImageDraw.Draw(card_2)
     draw_layer3.text((50, 50), insp_text_two, "black", font=font_3)
-    _base.paste(card_2, (280, 3255), card_2)
+    _base.paste(card_2, (280, 3300), card_2)
     if party == "APC":
         resize_ballot = apc_ballot.resize(
             (apc_ballot.size[0]*4, apc_ballot.size[1]*4))
