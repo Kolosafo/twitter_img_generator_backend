@@ -13,6 +13,7 @@ urlpatterns = [
     path('getViewCount/', views.getViewCount, name="getViewCount"),
     path('updateViewCount/', views.updateViewCount, name="updateViewCount"),
     path('contactUs/', views.contactUs, name="contactUs"),
+    path('receipt/', views.TransactionReceiptFunc, name="receipt"),
 
 
 ]

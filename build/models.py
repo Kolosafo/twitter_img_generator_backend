@@ -14,3 +14,11 @@ class ContactUs(models.Model):
     def __str__(self):
         # user_to_string = str(self.user)
         return self.name
+
+
+class TransactionReceipt(models.Model):
+    name = models.CharField(max_length=100)
+    receipt = models.CharField(max_length=8000)
+    def __str__(self):
+        # user_to_string = str(self.user)
+        return self.name

@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from .design import apc_design, pdp_design, lp_design, nnpp_design, banner_design, post_design, post_3_design
 import base64
 import io
-from .models import VerifiedVotes, ContactUs
+from .models import VerifiedVotes, ContactUs, TransactionReceipt
 import random
 
 
@@ -52,14 +52,14 @@ def design_profile(request):
     profile_img = data["profile_img"]
     party = data["party"]
     name = data["name"]
-    print("I DEY CHECK NAME", name)
+    insp_qoute = data["inspirationalQoute"]
 
     if(party == "APC"):
         wm_apc_img, og = apc_design(profile_img)
         wm_apc_banner_img, og_banner = banner_design(name, party)
         wm_apc_post_design, og_post = post_design(party, name, profile_img)
         wm_apc_post_3_design, og_post_3 = post_3_design(
-            profile_img, name, "TEST INSPIRATION", party)
+            profile_img, name, insp_qoute, party)
 
         wm_img_url, og_img_url = pillow_image_to_base64_string(wm_apc_img, og)
         wm_banner_url, og_banne_url = pillow_image_to_base64_string(
@@ -84,7 +84,7 @@ def design_profile(request):
         wm_pdp_banner_img, og_banner = banner_design(name, party)
         wm_pdp_post_design, og_post = post_design(party, name, profile_img)
         wm_pdp_post_3_design, og_post_3 = post_3_design(
-            profile_img, name, "TEST INSPIRATION", party)
+            profile_img, name, insp_qoute, party)
 
         wm_img_url, og_img_url = pillow_image_to_base64_string(wm_pdp_img, og)
         wm_banner_url, og_banne_url = pillow_image_to_base64_string(
@@ -109,7 +109,7 @@ def design_profile(request):
         wm_lp_banner_img, og_banner = banner_design(name, party)
         wm_lp_post_design, og_post = post_design(party, name, profile_img)
         wm_lp_post_3_design, og_post_3 = post_3_design(
-            profile_img, name, "TEST INSPIRATION", party)
+            profile_img, name, insp_qoute, party)
 
         wm_img_url, og_img_url = pillow_image_to_base64_string(wm_lp_img, og)
         wm_banner_url, og_banne_url = pillow_image_to_base64_string(
@@ -134,7 +134,7 @@ def design_profile(request):
         wm_nnpp_banner_img, og_banner = banner_design(name, party)
         wm_nnpp_post_design, og_post = post_design(party, name, profile_img)
         wm_nnpp_post_3_design, og_post_3 = post_3_design(
-            profile_img, name, "TEST INSPIRATION", party)
+            profile_img, name, insp_qoute, party)
 
         wm_img_url, og_img_url = pillow_image_to_base64_string(wm_nnpp_img, og)
         wm_banner_url, og_banne_url = pillow_image_to_base64_string(
@@ -190,4 +190,17 @@ def contactUs(request):
         print("EXPETPOO,", E)
 
     ContactUs.objects.create(name=name, message=message)
+    return JsonResponse("Success", safe=False, status=200)
+
+
+@api_view(['POST'])
+def TransactionReceiptFunc(request):
+    try:
+        data = request.data
+        name = data["name"]
+        receipt = data["receipt"]
+    except Exception as E:
+        print("EXPETPOO,", E)
+
+    TransactionReceipt.objects.create(name=name, receipt=receipt)
     return JsonResponse("Success", safe=False, status=200)

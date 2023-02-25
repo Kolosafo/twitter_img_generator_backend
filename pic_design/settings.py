@@ -83,7 +83,7 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
 
-        # #PRODUCTION DB
+        #PRODUCTION DB
           'ENGINE': 'django.db.backends.postgresql',
           'NAME': 'db295vph055lbb',
           'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
