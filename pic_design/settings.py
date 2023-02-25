@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'build',
     'rest_framework'
 ]
@@ -83,13 +84,13 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
 
-        #PRODUCTION DB
-          'ENGINE': 'django.db.backends.postgresql',
-          'NAME': 'db295vph055lbb',
-          'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
-          'PORT': 5432,
-          'USER': 'syfqpwcdekixpw',
-          'PASSWORD': '619ef62ac30e44449456d3e2ebdc00e5d097f60f82b33c3fa9009ce554aef775'
+        # PRODUCTION DB
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db295vph055lbb',
+        'HOST': 'ec2-52-18-116-67.eu-west-1.compute.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'syfqpwcdekixpw',
+        'PASSWORD': '619ef62ac30e44449456d3e2ebdc00e5d097f60f82b33c3fa9009ce554aef775'
 
     }
 }
@@ -147,22 +148,14 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5173/',
     'https://vislendor.com/'
 ]
+CORS_ORIGIN_WHITELIST = (
+    'https://vislendor.com/',
+    'http://127.0.0.1:5173/',
+)
 
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
 
 EMAIL_HOST = "localhost"
 EMAIL_PORT = 3000
 CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
-
-CSRF_USE_SESSIONS = False
-CSRF_COOKIE_HTTPONLY = True
-CSRF_COOKIE_SAMESITE = None
-
-SESSION_COOKIE_HTTPONLY = True
-SESSION_COOKIE_SAMESITE = None
-
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
