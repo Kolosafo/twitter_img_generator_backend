@@ -286,7 +286,7 @@ def twenty_words_separator(text: str):
 
 
 font_path_3 = "media/midspicy.ttf"
-font_3 = ImageFont.truetype(font_path_3, 120)
+font_3 = ImageFont.truetype(font_path_3, 150)
 
 apc_ballot = Image.open((image_path + "apc_ballot.png"))
 pdp_ballot = Image.open((image_path + "pdp_ballot.png"))
