@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .design import apc_design, pdp_design, lp_design, nnpp_design, banner_design, post_design, post_3_design
+from .design import apc_design, pdp_design, lp_design, nnpp_design, banner_design, post_design
 import base64
 import io
 from .models import VerifiedVotes, ContactUs, TransactionReceipt, RealVoteCount
