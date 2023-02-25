@@ -11,9 +11,11 @@ app_name = 'build'
 urlpatterns = [
     path('', views.design_profile, name="design_profile"),
     path('getViewCount/', views.getViewCount, name="getViewCount"),
+    path('getRealCount/', views.getRealCount, name="getRealCount"),
     path('updateViewCount/', views.updateViewCount, name="updateViewCount"),
     path('contactUs/', views.contactUs, name="contactUs"),
     path('receipt/', views.TransactionReceiptFunc, name="receipt"),
+    path('realCount/', views.realDownloadsCount, name="realCount"),
 
 
 ]

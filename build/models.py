@@ -7,6 +7,9 @@ class VerifiedVotes(models.Model):
     verified = models.IntegerField(default=2435, blank=False)
 
 
+class RealVoteCount(models.Model):
+    count = models.IntegerField(default=0, blank=False)
+
 class ContactUs(models.Model):
     name = models.CharField(max_length=100)
     message = models.CharField(max_length=500)
