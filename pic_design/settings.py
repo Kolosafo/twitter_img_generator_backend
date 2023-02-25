@@ -145,12 +145,12 @@ django_heroku.settings(locals())
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:5173/',
-    'https://vislendor.com/'
+    'http://127.0.0.1:5173',
+    'https://vislendor.com',
 ]
 CORS_ORIGIN_WHITELIST = (
-    'https://vislendor.com/',
-    'http://127.0.0.1:5173/',
+    'https://vislendor.com',
+    'http://127.0.0.1:5173',
 )
 
 CORS_ORIGIN_ALLOW_ALL = True
