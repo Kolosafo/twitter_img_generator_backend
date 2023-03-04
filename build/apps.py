@@ -6,5 +6,6 @@ class BuildConfig(AppConfig):
     name = 'build'
 
     def ready(self):
-        from .import updateVotes
-        updateVotes.start()
+        pass
+        # from .import updateVotes
+        # updateVotes.start()
